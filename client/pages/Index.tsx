@@ -677,8 +677,8 @@ export default function Index() {
         id="vision"
         className="relative py-32 bg-[#1a4731] text-white overflow-hidden flex items-center justify-center text-center"
       >
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625246333195-09d9b117b2b8?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay -z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a4731] via-transparent to-[#1a4731] -z-10"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625246333195-09d9b117b2b8?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a4731] via-transparent to-[#1a4731]"></div>
 
         <div className="container relative z-10 px-4">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
@@ -686,23 +686,22 @@ export default function Index() {
               <Leaf className="text-green-400" size={32} />
             </div>
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-              "Every farmer deserves a <br />
-              <span className="text-amber-400">Digital Companion</span>."
+              “Every farmer deserves a <br />
+              <span className="text-amber-400">Digital Companion</span>.”
             </h2>
             <p className="text-xl text-green-100/80 font-light max-w-2xl mx-auto">
-              One that understands their language, their challenges, and
-              delivers the right guidance at the right time.
+              One that understands their language, their challenges, and delivers the right guidance at the right time.
             </p>
-            <PrimaryButton variant="white" size="md" className="inline-flex">
+            <button className="mt-8 bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
               Join Us
-            </PrimaryButton>
+            </button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-green-950 text-green-100/60 py-16 relative">
-        <div className="absolute top-0 left-0 right-0 overflow-hidden -mt-10 md:-mt-16 leading-none -z-10">
+        <div className="absolute top-0 left-0 right-0 overflow-hidden -mt-10 md:-mt-16 leading-none">
           <svg
             className="relative block w-full h-[60px] md:h-[100px]"
             data-name="Layer 1"
@@ -729,24 +728,21 @@ export default function Index() {
             </div>
 
             <div className="flex gap-8 text-sm font-medium">
-              <a href="#home" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors">
                 Home
               </a>
-              <a
-                href="#features"
-                className="hover:text-white transition-colors"
-              >
-                Features
+              <a href="#" className="hover:text-white transition-colors">
+                About
               </a>
-              <a href="#contact" className="hover:text-white transition-colors">
+              <a href="#" className="hover:text-white transition-colors">
                 Contact
               </a>
             </div>
 
             <div className="text-right">
               <p className="text-sm">
-                Built for{" "}
-                <span className="text-amber-400 font-bold">Indian Farmers</span>{" "}
+                Built for{' '}
+                <span className="text-amber-400 font-bold">Indian Farmers</span>{' '}
                 🇮🇳
               </p>
               <p className="text-xs mt-1 text-green-100/30">
