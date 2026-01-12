@@ -118,7 +118,7 @@ export const ContactForm: React.FC = () => {
     const value = formData[name];
 
     const commonClasses =
-      'w-full bg-white/50 backdrop-blur-sm border rounded-xl px-4 py-3 text-gray-800 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-white ' +
+      'w-full bg-white/50 backdrop-blur-sm border rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-800 placeholder-gray-400 transition-all focus:outline-none focus:ring-2 focus:ring-green-500 focus:bg-white ' +
       (hasError ? 'border-red-300 focus:ring-red-500' : 'border-green-200/50');
 
     return (
@@ -150,7 +150,7 @@ export const ContactForm: React.FC = () => {
         )}
 
         {hasError && (
-          <p className="text-red-500 text-xs mt-1 flex items-center gap-1">
+          <p className="text-red-500 text-xs sm:text-sm mt-1 flex items-center gap-1">
             <AlertCircle size={14} />
             {errors[name]}
           </p>
@@ -198,7 +198,7 @@ export const ContactForm: React.FC = () => {
 
         {status.type !== 'idle' && (
           <div
-            className={`p-4 rounded-xl flex items-center gap-3 animate-fade-in-up ${
+            className={`p-3 sm:p-4 rounded-xl flex items-center gap-2 sm:gap-3 animate-fade-in-up ${
               status.type === 'success'
                 ? 'bg-green-100 text-green-700'
                 : status.type === 'error'
@@ -207,13 +207,13 @@ export const ContactForm: React.FC = () => {
             }`}
           >
             {status.type === 'success' ? (
-              <Check size={20} />
+              <Check size={18} className="sm:w-5 sm:h-5" />
             ) : status.type === 'error' ? (
-              <AlertCircle size={20} />
+              <AlertCircle size={18} className="sm:w-5 sm:h-5" />
             ) : (
-              <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
             )}
-            <span className="text-sm font-medium">{status.message}</span>
+            <span className="text-xs sm:text-sm font-medium">{status.message}</span>
           </div>
         )}
 
