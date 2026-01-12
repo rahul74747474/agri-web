@@ -96,7 +96,7 @@ export default function Index() {
             <div className="bg-green-700 text-white p-2 rounded-full shadow-md">
               <Sprout size={20} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-green-900 transition-colors">
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-green-900 transition-colors">
               Kisaan Sathi
             </span>
           </div>
@@ -107,14 +107,14 @@ export default function Index() {
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium text-gray-700 hover:text-green-700 hover:bg-green-50 px-3 py-1.5 rounded-full transition-all"
+                className="text-xs sm:text-sm font-medium text-gray-700 hover:text-green-700 hover:bg-green-50 px-2 sm:px-3 py-1.5 rounded-full transition-all"
               >
                 {item}
               </a>
             ))}
           </div>
 
-          <button className="hidden md:flex bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-medium transition-all shadow-md items-center gap-2 transform hover:scale-105 active:scale-95 text-sm">
+          <button className="hidden md:flex bg-green-700 hover:bg-green-800 text-white px-4 sm:px-5 py-2 rounded-full font-medium transition-all shadow-md items-center gap-1 sm:gap-2 transform hover:scale-105 active:scale-95 text-xs sm:text-sm">
             <Phone size={16} />
             Contact Us
           </button>
