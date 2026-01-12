@@ -22,9 +22,9 @@ export const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   ...props
 }) => {
   const sizeClasses = {
-    sm: 'px-5 py-2 text-sm',
-    md: 'px-8 py-3 text-base',
-    lg: 'px-10 py-4 text-lg',
+    sm: 'px-3 sm:px-5 py-2 text-xs sm:text-sm',
+    md: 'px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base',
+    lg: 'px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl',
   };
 
   const variantClasses = {
