@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Mic,
   Sprout,
@@ -19,16 +19,16 @@ import {
   Star,
   CheckCircle,
   Users,
-} from 'lucide-react';
-import { StepCard } from '@/components/StepCard';
-import { CreativeCard } from '@/components/CreativeCard';
-import { UseCaseCard } from '@/components/UseCaseCard';
-import { LanguageBadge } from '@/components/LanguageBadge';
-import { StatCard } from '@/components/StatCard';
-import { ProblemItem } from '@/components/ProblemItem';
-import { SectionHeader } from '@/components/SectionHeader';
-import { PrimaryButton } from '@/components/PrimaryButton';
-import { ContactForm } from '@/components/ContactForm';
+} from "lucide-react";
+import { StepCard } from "@/components/StepCard";
+import { CreativeCard } from "@/components/CreativeCard";
+import { UseCaseCard } from "@/components/UseCaseCard";
+import { LanguageBadge } from "@/components/LanguageBadge";
+import { StatCard } from "@/components/StatCard";
+import { ProblemItem } from "@/components/ProblemItem";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +39,8 @@ export default function Index() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -88,8 +88,8 @@ export default function Index() {
         <nav
           className={`transition-all duration-300 ease-in-out w-full max-w-5xl rounded-full px-6 py-3 flex items-center justify-between ${
             scrolled
-              ? 'bg-white/90 backdrop-blur-md shadow-lg py-3'
-              : 'bg-white/40 backdrop-blur-sm py-4 border border-white/40'
+              ? "bg-white/90 backdrop-blur-md shadow-lg py-3"
+              : "bg-white/40 backdrop-blur-sm py-4 border border-white/40"
           }`}
         >
           <div className="flex items-center gap-2">
@@ -103,7 +103,7 @@ export default function Index() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {['Home', 'Features', 'Vision', 'Contact'].map((item) => (
+            {["Home", "Features", "Vision", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -133,7 +133,7 @@ export default function Index() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden animate-fade-in-up">
           <div className="flex flex-col gap-6 text-center text-xl font-medium text-gray-800">
-            {['Home', 'Features', 'Vision', 'Contact'].map((item) => (
+            {["Home", "Features", "Vision", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -167,11 +167,12 @@ export default function Index() {
           </div>
 
           {/* Gradient Blob */}
-          <div className="absolute top-1/2 left-1/2 
+          <div
+            className="absolute top-1/2 left-1/2 
                           -translate-x-1/2 -translate-y-1/2 
                           w-[800px] h-[800px] 
-                          bg-green-500/10 rounded-full blur-3xl animate-pulse">
-          </div>
+                          bg-green-500/10 rounded-full blur-3xl animate-pulse"
+          ></div>
 
           {/* Abstract Pattern Background */}
           <div className="absolute inset-0 opacity-10">
@@ -204,10 +205,10 @@ export default function Index() {
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Every farming challenge, solved in your own language.{' '}
+                Every farming challenge, solved in your own language.{" "}
                 <strong className="text-white font-semibold">
                   A talking digital avatar
-                </strong>{' '}
+                </strong>{" "}
                 that supports you like a trusted friend.
               </p>
 
@@ -254,8 +255,8 @@ export default function Index() {
                     className="absolute inset-0 opacity-5"
                     style={{
                       backgroundImage:
-                        'radial-gradient(#166534 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
+                        "radial-gradient(#166534 1px, transparent 1px)",
+                      backgroundSize: "20px 20px",
                     }}
                   ></div>
 
@@ -274,7 +275,8 @@ export default function Index() {
                             Kisaan Sathi
                           </p>
                           <p className="text-gray-700 text-sm leading-snug">
-                            Hello! The weather looks clear today. How can I help you?
+                            Hello! The weather looks clear today. How can I help
+                            you?
                           </p>
                         </div>
                       </div>
@@ -298,7 +300,8 @@ export default function Index() {
                             </span>
                           </div>
                           <p className="text-gray-700 text-sm leading-snug">
-                            For wheat, use a balanced combination of urea and DAP for optimal growth…
+                            For wheat, use a balanced combination of urea and
+                            DAP for optimal growth…
                           </p>
                         </div>
                       </div>
@@ -307,8 +310,10 @@ export default function Index() {
 
                   <div className="p-4 bg-white/80 backdrop-blur-md border-t border-gray-100 z-20">
                     <button className="w-full py-3 bg-gradient-to-r from-green-700 to-green-600 text-white rounded-xl shadow-lg shadow-green-200 active:scale-95 transition-transform flex items-center justify-center gap-2">
-                      <Mic size={20} />{' '}
-                      <span className="text-sm font-semibold">Tap to Speak</span>
+                      <Mic size={20} />{" "}
+                      <span className="text-sm font-semibold">
+                        Tap to Speak
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -369,7 +374,10 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-24 px-4 md:px-6 relative overflow-hidden">
+      <section
+        id="features"
+        className="py-24 px-4 md:px-6 relative overflow-hidden"
+      >
         {/* Background decorative elements */}
         <div className="absolute top-1/3 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float-delayed -z-10"></div>
         <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float -z-10"></div>
@@ -433,7 +441,8 @@ export default function Index() {
                 Built for Every Farmer
               </h3>
               <p className="text-lg text-gray-600">
-                Whether you are a smallholder or a large-scale farmer, Kisaan Sathi supports you in every type of farming and every challenge.
+                Whether you are a smallholder or a large-scale farmer, Kisaan
+                Sathi supports you in every type of farming and every challenge.
               </p>
             </div>
 
@@ -460,8 +469,8 @@ export default function Index() {
         <div
           className="absolute inset-0 opacity-5 -z-10"
           style={{
-            backgroundImage: 'linear-gradient(#166534 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
+            backgroundImage: "linear-gradient(#166534 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
         ></div>
 
@@ -476,7 +485,8 @@ export default function Index() {
                     Why Kisaan Sathi?
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Technology has advanced rapidly, yet for many farmers, using apps is still complicated and inaccessible.
+                    Technology has advanced rapidly, yet for many farmers, using
+                    apps is still complicated and inaccessible.
                   </p>
                 </div>
 
@@ -547,10 +557,26 @@ export default function Index() {
           centered={true}
         />
         <div className="grid md:grid-cols-4 gap-6">
-          <StatCard icon={<Users size={28} />} value="10,000+" label="Farmers Connected" />
-          <StatCard icon={<MessageCircle size={28} />} value="Daily" label="Voice Queries" />
-          <StatCard icon={<Wheat size={28} />} value="15+" label="Crop Categories" />
-          <StatCard icon={<Star size={28} />} value="4.9/5" label="User Rating" />
+          <StatCard
+            icon={<Users size={28} />}
+            value="10,000+"
+            label="Farmers Connected"
+          />
+          <StatCard
+            icon={<MessageCircle size={28} />}
+            value="Daily"
+            label="Voice Queries"
+          />
+          <StatCard
+            icon={<Wheat size={28} />}
+            value="15+"
+            label="Crop Categories"
+          />
+          <StatCard
+            icon={<Star size={28} />}
+            value="4.9/5"
+            label="User Rating"
+          />
         </div>
       </section>
 
@@ -579,22 +605,38 @@ export default function Index() {
                   Why Reach Out?
                 </h3>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  Whether you have questions about our platform, want to explore partnerships, or simply wish to share your feedback, we're here to help.
+                  Whether you have questions about our platform, want to explore
+                  partnerships, or simply wish to share your feedback, we're
+                  here to help.
                 </p>
               </div>
 
               <div className="space-y-4">
                 {[
-                  { icon: <Phone size={24} />, title: '24/7 Support', desc: 'We respond within 24 hours' },
-                  { icon: <Users size={24} />, title: 'Dedicated Team', desc: 'Expert support specialists' },
-                  { icon: <CheckCircle size={24} />, title: 'Solutions', desc: 'Custom solutions for your needs' },
+                  {
+                    icon: <Phone size={24} />,
+                    title: "24/7 Support",
+                    desc: "We respond within 24 hours",
+                  },
+                  {
+                    icon: <Users size={24} />,
+                    title: "Dedicated Team",
+                    desc: "Expert support specialists",
+                  },
+                  {
+                    icon: <CheckCircle size={24} />,
+                    title: "Solutions",
+                    desc: "Custom solutions for your needs",
+                  },
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-4">
                     <div className="flex-shrink-0 mt-1 text-green-600">
                       {item.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-900">{item.title}</h4>
+                      <h4 className="font-semibold text-gray-900">
+                        {item.title}
+                      </h4>
                       <p className="text-gray-600 text-sm">{item.desc}</p>
                     </div>
                   </div>
@@ -648,13 +690,10 @@ export default function Index() {
               <span className="text-amber-400">Digital Companion</span>."
             </h2>
             <p className="text-xl text-green-100/80 font-light max-w-2xl mx-auto">
-              One that understands their language, their challenges, and delivers the right guidance at the right time.
+              One that understands their language, their challenges, and
+              delivers the right guidance at the right time.
             </p>
-            <PrimaryButton
-              variant="white"
-              size="md"
-              className="inline-flex"
-            >
+            <PrimaryButton variant="white" size="md" className="inline-flex">
               Join Us
             </PrimaryButton>
           </div>
@@ -693,7 +732,10 @@ export default function Index() {
               <a href="#home" className="hover:text-white transition-colors">
                 Home
               </a>
-              <a href="#features" className="hover:text-white transition-colors">
+              <a
+                href="#features"
+                className="hover:text-white transition-colors"
+              >
                 Features
               </a>
               <a href="#contact" className="hover:text-white transition-colors">
@@ -703,8 +745,8 @@ export default function Index() {
 
             <div className="text-right">
               <p className="text-sm">
-                Built for{' '}
-                <span className="text-amber-400 font-bold">Indian Farmers</span>{' '}
+                Built for{" "}
+                <span className="text-amber-400 font-bold">Indian Farmers</span>{" "}
                 🇮🇳
               </p>
               <p className="text-xs mt-1 text-green-100/30">

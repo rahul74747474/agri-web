@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface SectionHeaderProps {
   badge?: string;
@@ -15,8 +15,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   centered = true,
   showDivider = true,
 }) => {
-  const containerClass = centered ? 'text-center' : 'text-left';
-  const alignClass = centered ? 'mx-auto' : '';
+  const containerClass = centered ? "text-center" : "text-left";
+  const alignClass = centered ? "mx-auto" : "";
 
   return (
     <div className={`${containerClass} mb-16`}>
@@ -29,10 +29,14 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         {title}
       </h2>
       {showDivider && (
-        <div className={`w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full ${alignClass} mb-6`}></div>
+        <div
+          className={`w-16 sm:w-20 h-1 sm:h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full ${alignClass} mb-6`}
+        ></div>
       )}
       {subtitle && (
-        <p className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl ${alignClass}`}>
+        <p
+          className={`text-sm sm:text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-2xl ${alignClass}`}
+        >
           {subtitle}
         </p>
       )}
