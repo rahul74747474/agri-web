@@ -196,14 +196,14 @@ export default function Index() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
                 Kisaan Sathi <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400">
                   Your Digital Farming Companion
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-green-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
                 Every farming challenge, solved in your own language.{' '}
                 <strong className="text-white font-semibold">
                   A talking digital avatar
@@ -220,7 +220,7 @@ export default function Index() {
                 >
                   Ask by Voice
                 </PrimaryButton>
-                <button className="group bg-white/10 hover:bg-white/20 text-white border border-white/30 text-lg px-8 py-4 rounded-full font-medium backdrop-blur-sm transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
+                <button className="group bg-white/10 hover:bg-white/20 text-white border border-white/30 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium backdrop-blur-sm transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
                   <Info size={24} />
                   <span>How It Works</span>
                   <ArrowRight
@@ -231,11 +231,11 @@ export default function Index() {
               </div>
 
               {/* Stats/Trust Badges */}
-              <div className="pt-8 flex items-center justify-center lg:justify-start gap-8 opacity-80 text-sm md:text-base">
+              <div className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 opacity-80 text-xs sm:text-sm md:text-base">
                 <div className="flex items-center gap-2">
                   <span className="font-medium">10,000+ Farmers</span>
                 </div>
-                <div className="h-4 w-px bg-green-500/50"></div>
+                <div className="h-3 sm:h-4 w-px bg-green-500/50 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <span className="text-amber-400 font-bold">4.9/5</span>
                   <span>User Rating</span>
