@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import {
   Mic,
   Sprout,
@@ -19,13 +19,16 @@ import {
   Star,
   CheckCircle,
   Users,
-} from 'lucide-react';
-import { StepCard } from '@/components/StepCard';
-import { CreativeCard } from '@/components/CreativeCard';
-import { UseCaseCard } from '@/components/UseCaseCard';
-import { LanguageBadge } from '@/components/LanguageBadge';
-import { StatCard } from '@/components/StatCard';
-import { ProblemItem } from '@/components/ProblemItem';
+} from "lucide-react";
+import { StepCard } from "@/components/StepCard";
+import { CreativeCard } from "@/components/CreativeCard";
+import { UseCaseCard } from "@/components/UseCaseCard";
+import { LanguageBadge } from "@/components/LanguageBadge";
+import { StatCard } from "@/components/StatCard";
+import { ProblemItem } from "@/components/ProblemItem";
+import { SectionHeader } from "@/components/SectionHeader";
+import { PrimaryButton } from "@/components/PrimaryButton";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,8 +39,8 @@ export default function Index() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -85,33 +88,33 @@ export default function Index() {
         <nav
           className={`transition-all duration-300 ease-in-out w-full max-w-5xl rounded-full px-6 py-3 flex items-center justify-between ${
             scrolled
-              ? 'bg-white/90 backdrop-blur-md shadow-lg py-3'
-              : 'bg-white/40 backdrop-blur-sm py-4 border border-white/40'
+              ? "bg-white/90 backdrop-blur-md shadow-lg py-3"
+              : "bg-white/40 backdrop-blur-sm py-4 border border-white/40"
           }`}
         >
           <div className="flex items-center gap-2">
             <div className="bg-green-700 text-white p-2 rounded-full shadow-md">
               <Sprout size={20} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-green-900 transition-colors">
+            <span className="text-lg sm:text-xl font-bold tracking-tight text-green-900 transition-colors">
               Kisaan Sathi
             </span>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
-            {['Home', 'Features', 'Vision', 'Contact'].map((item) => (
+            {["Home", "Features", "Vision", "Contact"].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
-                className="text-sm font-medium text-gray-700 hover:text-green-700 hover:bg-green-50 px-3 py-1.5 rounded-full transition-all"
+                className="text-xs sm:text-sm font-medium text-gray-700 hover:text-green-700 hover:bg-green-50 px-2 sm:px-3 py-1.5 rounded-full transition-all"
               >
                 {item}
               </a>
             ))}
           </div>
 
-          <button className="hidden md:flex bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-medium transition-all shadow-md items-center gap-2 transform hover:scale-105 active:scale-95 text-sm">
+          <button className="hidden md:flex bg-green-700 hover:bg-green-800 text-white px-4 sm:px-5 py-2 rounded-full font-medium transition-all shadow-md items-center gap-1 sm:gap-2 transform hover:scale-105 active:scale-95 text-xs sm:text-sm">
             <Phone size={16} />
             Contact Us
           </button>
@@ -130,10 +133,10 @@ export default function Index() {
       {isMenuOpen && (
         <div className="fixed inset-0 z-40 bg-white pt-24 px-6 md:hidden animate-fade-in-up">
           <div className="flex flex-col gap-6 text-center text-xl font-medium text-gray-800">
-            {['Home', 'Features', 'Vision', 'Contact'].map((item) => (
+            {["Home", "Features", "Vision", "Contact"].map((item) => (
               <a
                 key={item}
-                href="#"
+                href={`#${item.toLowerCase()}`}
                 className="py-2 border-b border-gray-100"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -150,10 +153,11 @@ export default function Index() {
       {/* Hero Section */}
       <header
         id="home"
-        className="relative bg-gradient-to-b from-green-800 to-green-900 text-white pt-16 pb-24 md:pt-24 md:pb-32 overflow-hidden min-h-[calc(100vh-4rem)] flex items-center"
+        className="relative bg-gradient-to-b from-green-800 to-green-900 text-white pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden flex items-center"
       >
-        {/* Floating SVG Background Elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Background Decorative Elements - Properly layered with z-index */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+          {/* Floating SVG Background Elements */}
           <div className="absolute top-20 left-10 text-white/10 animate-float">
             <CloudSun size={120} />
           </div>
@@ -162,22 +166,24 @@ export default function Index() {
             <Sprout size={180} />
           </div>
 
-          <div className="absolute top-1/2 left-1/2 
+          {/* Gradient Blob */}
+          <div
+            className="absolute top-1/2 left-1/2 
                           -translate-x-1/2 -translate-y-1/2 
                           w-[800px] h-[800px] 
-                          bg-green-500/10 rounded-full blur-3xl animate-pulse">
-          </div>
-        </div>
+                          bg-green-500/10 rounded-full blur-3xl animate-pulse"
+          ></div>
 
-        {/* Abstract Pattern Background */}
-        <div className="absolute inset-0 opacity-10">
-          <svg
-            className="h-full w-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
-          </svg>
+          {/* Abstract Pattern Background */}
+          <div className="absolute inset-0 opacity-10">
+            <svg
+              className="h-full w-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path d="M0 100 C 20 0 50 0 100 100 Z" fill="white" />
+            </svg>
+          </div>
         </div>
 
         <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -191,29 +197,31 @@ export default function Index() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
                 Kisaan Sathi <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-300 to-orange-400">
                   Your Digital Farming Companion
                 </span>
               </h1>
 
-              <p className="text-lg md:text-xl text-green-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
-                Every farming challenge, solved in your own language.{' '}
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl text-green-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0 font-light">
+                Every farming challenge, solved in your own language.{" "}
                 <strong className="text-white font-semibold">
                   A talking digital avatar
-                </strong>{' '}
+                </strong>{" "}
                 that supports you like a trusted friend.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
-                <button className="group relative bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white text-lg px-8 py-4 rounded-full font-bold shadow-lg transition-all hover:-translate-y-1 overflow-hidden">
-                  <div className="absolute inset-0 w-full h-full bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                  <span className="relative flex items-center gap-2">
-                    <Mic size={24} /> Ask by Voice
-                  </span>
-                </button>
-                <button className="group bg-white/10 hover:bg-white/20 text-white border border-white/30 text-lg px-8 py-4 rounded-full font-medium backdrop-blur-sm transition-all hover:-translate-y-1 flex items-center gap-2">
+                <PrimaryButton
+                  variant="primary"
+                  size="lg"
+                  icon={<Mic size={24} />}
+                  className="text-white"
+                >
+                  Ask by Voice
+                </PrimaryButton>
+                <button className="group bg-white/10 hover:bg-white/20 text-white border border-white/30 text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium backdrop-blur-sm transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
                   <Info size={24} />
                   <span>How It Works</span>
                   <ArrowRight
@@ -224,21 +232,21 @@ export default function Index() {
               </div>
 
               {/* Stats/Trust Badges */}
-              <div className="pt-8 flex items-center justify-center lg:justify-start gap-8 opacity-80">
+              <div className="pt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-8 opacity-80 text-xs sm:text-sm md:text-base">
                 <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium">10,000+ Farmers</span>
+                  <span className="font-medium">10,000+ Farmers</span>
                 </div>
-                <div className="h-4 w-px bg-green-500/50"></div>
+                <div className="h-3 sm:h-4 w-px bg-green-500/50 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <span className="text-amber-400 font-bold">4.9/5</span>
-                  <span className="text-sm">User Rating</span>
+                  <span>User Rating</span>
                 </div>
               </div>
             </div>
 
             {/* Creative Phone Mockup */}
             <div className="w-full lg:w-1/2 flex justify-center perspective-1000">
-              <div className="relative w-72 md:w-80 aspect-[9/18] bg-gray-900 rounded-[3rem] shadow-2xl overflow-hidden ring-8 ring-green-900/30 transform hover:rotate-0 transition-all duration-700 ease-out animate-float">
+              <div className="relative w-72 md:w-80 aspect-[9/18] bg-gray-900 rounded-[3rem] shadow-2xl overflow-hidden ring-8 ring-green-900/30 transform hover:rotate-0 transition-all duration-700 ease-out animate-float z-20">
                 <div className="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-white/10 to-transparent pointer-events-none z-30"></div>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 h-7 w-24 bg-black rounded-b-2xl z-40"></div>
 
@@ -247,8 +255,8 @@ export default function Index() {
                     className="absolute inset-0 opacity-5"
                     style={{
                       backgroundImage:
-                        'radial-gradient(#166534 1px, transparent 1px)',
-                      backgroundSize: '20px 20px',
+                        "radial-gradient(#166534 1px, transparent 1px)",
+                      backgroundSize: "20px 20px",
                     }}
                   ></div>
 
@@ -267,7 +275,8 @@ export default function Index() {
                             Kisaan Sathi
                           </p>
                           <p className="text-gray-700 text-sm leading-snug">
-                            Hello! The weather looks clear today. How can I help you?
+                            Hello! The weather looks clear today. How can I help
+                            you?
                           </p>
                         </div>
                       </div>
@@ -291,7 +300,8 @@ export default function Index() {
                             </span>
                           </div>
                           <p className="text-gray-700 text-sm leading-snug">
-                            For wheat, use a balanced combination of urea and DAP for optimal growth…
+                            For wheat, use a balanced combination of urea and
+                            DAP for optimal growth…
                           </p>
                         </div>
                       </div>
@@ -300,8 +310,10 @@ export default function Index() {
 
                   <div className="p-4 bg-white/80 backdrop-blur-md border-t border-gray-100 z-20">
                     <button className="w-full py-3 bg-gradient-to-r from-green-700 to-green-600 text-white rounded-xl shadow-lg shadow-green-200 active:scale-95 transition-transform flex items-center justify-center gap-2">
-                      <Mic size={20} />{' '}
-                      <span className="text-sm font-semibold">Tap to Speak</span>
+                      <Mic size={20} />{" "}
+                      <span className="text-sm font-semibold">
+                        Tap to Speak
+                      </span>
                     </button>
                   </div>
                 </div>
@@ -310,7 +322,7 @@ export default function Index() {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0">
+        <div className="absolute bottom-0 left-0 right-0 z-10">
           <svg
             viewBox="0 0 1440 120"
             fill="none"
@@ -325,16 +337,13 @@ export default function Index() {
       </header>
 
       {/* SECTION 1: How It Works */}
-      <section className="py-20 px-4 md:px-6 bg-[#FFFBF7]">
+      <section className="py-24 px-4 md:px-6 bg-[#FFFBF7]">
         <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-green-600 font-bold tracking-wider text-sm uppercase bg-green-100 px-3 py-1 rounded-full">
-              Simple Process
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-green-900 mt-4">
-              How It Works
-            </h2>
-          </div>
+          <SectionHeader
+            badge="Simple Process"
+            title="How It Works"
+            centered={true}
+          />
 
           <div className="grid md:grid-cols-3 gap-8 relative">
             <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-green-100 -z-10 -translate-y-1/2 transform scale-x-75"></div>
@@ -365,17 +374,20 @@ export default function Index() {
       </section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 px-4 md:px-6 relative">
+      <section
+        id="features"
+        className="py-24 px-4 md:px-6 relative overflow-hidden"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute top-1/3 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float-delayed -z-10"></div>
+        <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-float -z-10"></div>
+
         <div className="container mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <span className="text-green-600 font-bold tracking-wider text-sm uppercase bg-green-100 px-3 py-1 rounded-full">
-              Features
-            </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-green-900 mt-4 mb-4">
-              What Can Kisaan Sathi Do for You?
-            </h2>
-            <div className="w-20 h-1.5 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto rounded-full"></div>
-          </div>
+          <SectionHeader
+            badge="Features"
+            title="What Can Kisaan Sathi Do for You?"
+            centered={true}
+          />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <CreativeCard
@@ -408,14 +420,11 @@ export default function Index() {
             />
           </div>
         </div>
-
-        <div className="absolute top-1/3 left-0 w-64 h-64 bg-green-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float-delayed"></div>
-        <div className="absolute bottom-1/3 right-0 w-64 h-64 bg-amber-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-float"></div>
       </section>
 
       {/* Use Cases */}
       <section className="py-24 bg-green-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-100 rounded-full blur-3xl opacity-40 -translate-y-1/2 translate-x-1/2 -z-10"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-5/12 text-center lg:text-left">
@@ -425,14 +434,15 @@ export default function Index() {
                     <User size={100} className="text-green-800" />
                   </div>
                 </div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border-2 border-green-200 rounded-full animate-pulse"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-96 md:h-96 border border-green-100 rounded-full"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 border-2 border-green-200 rounded-full animate-pulse -z-10"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 md:w-96 md:h-96 border border-green-100 rounded-full -z-10"></div>
               </div>
               <h3 className="text-3xl font-bold text-green-900 mb-4">
                 Built for Every Farmer
               </h3>
               <p className="text-lg text-gray-600">
-                Whether you are a smallholder or a large-scale farmer, Kisaan Sathi supports you in every type of farming and every challenge.
+                Whether you are a smallholder or a large-scale farmer, Kisaan
+                Sathi supports you in every type of farming and every challenge.
               </p>
             </div>
 
@@ -446,7 +456,7 @@ export default function Index() {
                 category="Crop Health"
               />
               <UseCaseCard
-                query="What is today’s soybean price in the Indore market?"
+                query="What is today's soybean price in the Indore market?"
                 category="Market Updates"
               />
             </div>
@@ -457,16 +467,16 @@ export default function Index() {
       {/* Why Section */}
       <section className="py-24 px-4 md:px-6 bg-[#FFFBF7] relative overflow-hidden">
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-5 -z-10"
           style={{
-            backgroundImage: 'linear-gradient(#166534 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
+            backgroundImage: "linear-gradient(#166534 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
           }}
         ></div>
 
         <div className="container mx-auto relative z-10">
           <div className="max-w-6xl mx-auto bg-white rounded-[3rem] p-8 md:p-16 shadow-xl border border-green-100 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-green-50 to-transparent transform skew-x-12 translate-x-32 hidden lg:block pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-2/3 h-full bg-gradient-to-l from-green-50 to-transparent transform skew-x-12 translate-x-32 hidden lg:block pointer-events-none -z-10"></div>
 
             <div className="flex flex-col lg:flex-row gap-16 items-center">
               <div className="w-full lg:w-1/2 space-y-8 z-10">
@@ -475,7 +485,8 @@ export default function Index() {
                     Why Kisaan Sathi?
                   </h2>
                   <p className="text-lg text-gray-600 leading-relaxed">
-                    Technology has advanced rapidly, yet for many farmers, using apps is still complicated and inaccessible.
+                    Technology has advanced rapidly, yet for many farmers, using
+                    apps is still complicated and inaccessible.
                   </p>
                 </div>
 
@@ -488,7 +499,7 @@ export default function Index() {
 
               <div className="w-full lg:w-1/2 relative z-10">
                 <div className="relative bg-gradient-to-br from-green-800 to-green-900 rounded-3xl p-8 md:p-10 text-white shadow-2xl transform hover:scale-[1.02] transition-transform duration-500">
-                  <div className="absolute top-0 right-0 p-6 opacity-20">
+                  <div className="absolute top-0 right-0 p-6 opacity-20 -z-10">
                     <Sprout size={120} />
                   </div>
 
@@ -500,7 +511,7 @@ export default function Index() {
                   </h3>
 
                   <p className="text-green-50 text-lg mb-8 leading-relaxed">
-                    We’ve built a companion that doesn’t feel like an app —
+                    We've built a companion that doesn't feel like an app —
                     <strong> it feels human.</strong>
                     <br />
                     <br />
@@ -540,11 +551,102 @@ export default function Index() {
 
       {/* Trust Section */}
       <section className="py-24 px-4 container mx-auto">
+        <SectionHeader
+          badge="Why Choose Us"
+          title="Trusted by Thousands"
+          centered={true}
+        />
         <div className="grid md:grid-cols-4 gap-6">
-          <StatCard icon={<Users size={28} />} value="10,000+" label="Farmers Connected" />
-          <StatCard icon={<MessageCircle size={28} />} value="Daily" label="Voice Queries" />
-          <StatCard icon={<Wheat size={28} />} value="15+" label="Crop Categories" />
-          <StatCard icon={<Star size={28} />} value="4.9/5" label="User Rating" />
+          <StatCard
+            icon={<Users size={28} />}
+            value="10,000+"
+            label="Farmers Connected"
+          />
+          <StatCard
+            icon={<MessageCircle size={28} />}
+            value="Daily"
+            label="Voice Queries"
+          />
+          <StatCard
+            icon={<Wheat size={28} />}
+            value="15+"
+            label="Crop Categories"
+          />
+          <StatCard
+            icon={<Star size={28} />}
+            value="4.9/5"
+            label="User Rating"
+          />
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section
+        id="contact"
+        className="py-24 px-4 md:px-6 bg-gradient-to-b from-green-50 to-emerald-50 relative overflow-hidden"
+      >
+        {/* Background decorative elements */}
+        <div className="absolute top-20 right-0 w-96 h-96 bg-green-100 rounded-full blur-3xl opacity-40 animate-float -z-10"></div>
+        <div className="absolute bottom-20 left-0 w-72 h-72 bg-amber-100 rounded-full blur-3xl opacity-40 animate-float-delayed -z-10"></div>
+
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <SectionHeader
+            badge="Get In Touch"
+            title="Let's Connect"
+            subtitle="Have questions or want to partner with us? We'd love to hear from you."
+            centered={true}
+          />
+
+          <div className="grid md:grid-cols-2 gap-12 items-start mt-12">
+            {/* Left Column - Trust Indicators */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold text-green-900">
+                  Why Reach Out?
+                </h3>
+                <p className="text-gray-600 text-lg leading-relaxed">
+                  Whether you have questions about our platform, want to explore
+                  partnerships, or simply wish to share your feedback, we're
+                  here to help.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    icon: <Phone size={24} />,
+                    title: "24/7 Support",
+                    desc: "We respond within 24 hours",
+                  },
+                  {
+                    icon: <Users size={24} />,
+                    title: "Dedicated Team",
+                    desc: "Expert support specialists",
+                  },
+                  {
+                    icon: <CheckCircle size={24} />,
+                    title: "Solutions",
+                    desc: "Custom solutions for your needs",
+                  },
+                ].map((item, idx) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 mt-1 text-green-600">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-600 text-sm">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Column - Contact Form */}
+            <ContactForm />
+          </div>
         </div>
       </section>
 
@@ -552,17 +654,20 @@ export default function Index() {
       <section className="py-20 px-4 text-center bg-[#FFFBF7]">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-green-900 leading-tight">
-            Technology that doesn’t feel like an app, <br />
+            Technology that doesn't feel like an app, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
               but feels like a friend.
             </span>
           </h2>
           <div className="flex justify-center pt-4">
-            <button className="group relative bg-gradient-to-r from-amber-400 to-orange-500 hover:from-amber-500 hover:to-orange-600 text-white text-xl px-10 py-5 rounded-full font-bold shadow-xl transition-all hover:-translate-y-1 overflow-hidden flex items-center gap-3">
-              <Mic size={28} />
-              <span>Try It Now by Voice</span>
-              <div className="absolute inset-0 w-full h-full bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-            </button>
+            <PrimaryButton
+              variant="primary"
+              size="lg"
+              icon={<Mic size={28} />}
+              iconPosition="left"
+            >
+              Try It Now by Voice
+            </PrimaryButton>
           </div>
         </div>
       </section>
@@ -572,8 +677,8 @@ export default function Index() {
         id="vision"
         className="relative py-32 bg-[#1a4731] text-white overflow-hidden flex items-center justify-center text-center"
       >
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625246333195-09d9b117b2b8?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#1a4731] via-transparent to-[#1a4731]"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1625246333195-09d9b117b2b8?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-20 mix-blend-overlay -z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#1a4731] via-transparent to-[#1a4731] -z-10"></div>
 
         <div className="container relative z-10 px-4">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in-up">
@@ -581,22 +686,23 @@ export default function Index() {
               <Leaf className="text-green-400" size={32} />
             </div>
             <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-              “Every farmer deserves a <br />
-              <span className="text-amber-400">Digital Companion</span>.”
+              "Every farmer deserves a <br />
+              <span className="text-amber-400">Digital Companion</span>."
             </h2>
             <p className="text-xl text-green-100/80 font-light max-w-2xl mx-auto">
-              One that understands their language, their challenges, and delivers the right guidance at the right time.
+              One that understands their language, their challenges, and
+              delivers the right guidance at the right time.
             </p>
-            <button className="mt-8 bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+            <PrimaryButton variant="white" size="md" className="inline-flex">
               Join Us
-            </button>
+            </PrimaryButton>
           </div>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-green-950 text-green-100/60 py-16 relative">
-        <div className="absolute top-0 left-0 right-0 overflow-hidden -mt-10 md:-mt-16 leading-none">
+        <div className="absolute top-0 left-0 right-0 overflow-hidden -mt-10 md:-mt-16 leading-none -z-10">
           <svg
             className="relative block w-full h-[60px] md:h-[100px]"
             data-name="Layer 1"
@@ -623,21 +729,24 @@ export default function Index() {
             </div>
 
             <div className="flex gap-8 text-sm font-medium">
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#home" className="hover:text-white transition-colors">
                 Home
               </a>
-              <a href="#" className="hover:text-white transition-colors">
-                About
+              <a
+                href="#features"
+                className="hover:text-white transition-colors"
+              >
+                Features
               </a>
-              <a href="#" className="hover:text-white transition-colors">
+              <a href="#contact" className="hover:text-white transition-colors">
                 Contact
               </a>
             </div>
 
             <div className="text-right">
               <p className="text-sm">
-                Built for{' '}
-                <span className="text-amber-400 font-bold">Indian Farmers</span>{' '}
+                Built for{" "}
+                <span className="text-amber-400 font-bold">Indian Farmers</span>{" "}
                 🇮🇳
               </p>
               <p className="text-xs mt-1 text-green-100/30">
