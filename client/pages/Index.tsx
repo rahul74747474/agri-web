@@ -748,6 +748,9 @@ export default function Index() {
               <p className="text-xs mt-1 text-green-100/30">
                 © 2024 Kisaan Sathi. All rights reserved.
               </p>
+              <p className="text-xs mt-1 text-green-100/30">
+                Under:Mahakumbhrix Entrepreneurship & Tech Eagles Innovation Group
+              </p>
             </div>
           </div>
         </div>
