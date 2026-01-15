@@ -4,33 +4,28 @@ export function SocialLinksBar() {
   const socialLinks = [
     {
       icon: Youtube,
-      url: "https://www.youtube.com",
+      url: "https://www.youtube.com/channel/UCl9Oj06KLmTyj6-kCiEQasg",
       label: "YouTube",
-      color: "hover:text-red-600",
     },
     {
       icon: Instagram,
-      url: "https://www.instagram.com",
+      url: "https://www.instagram.com/kisan.saathi?igsh=dnQ4YXI2ZjQ1dTNp",
       label: "Instagram",
-      color: "hover:text-pink-600",
     },
     {
       icon: MessageCircleMore,
-      url: "https://www.telegram.org",
+      url: "https://t.me/kisansaathi",
       label: "Telegram",
-      color: "hover:text-blue-500",
     },
     {
       icon: MessageCircle,
-      url: "https://www.whatsapp.com",
+      url: "https://whatsapp.com/channel/0029Vb76f0cFCCoWhczKsK28",
       label: "WhatsApp",
-      color: "hover:text-green-500",
     },
     {
       icon: X,
-      url: "https://www.x.com",
+      url: "https://x.com/Saathi_Kisan",
       label: "X",
-      color: "hover:text-gray-900 dark:hover:text-white",
     },
   ];
 
@@ -45,7 +40,7 @@ export function SocialLinksBar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={social.label}
-            className={`flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-lg border border-gray-200 text-gray-700 transition-all duration-300 hover:scale-125 ${social.color}`}
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-green-700 hover:bg-green-800 shadow-lg border border-green-600 text-white transition-all duration-300 hover:scale-125"
             title={social.label}
           >
             <IconComponent size={24} />
