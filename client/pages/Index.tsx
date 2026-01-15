@@ -700,6 +700,9 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Social Links Bar */}
+      <SocialLinksBar />
+
       {/* Footer */}
       <footer className="bg-green-950 text-green-100/60 py-16 relative">
         <div className="absolute top-0 left-0 right-0 overflow-hidden -mt-10 md:-mt-16 leading-none">
