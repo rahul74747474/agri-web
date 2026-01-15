@@ -29,6 +29,7 @@ import { ProblemItem } from "@/components/ProblemItem";
 import { SectionHeader } from "@/components/SectionHeader";
 import { PrimaryButton } from "@/components/PrimaryButton";
 import { ContactForm } from "@/components/ContactForm";
+import { SocialLinksBar } from "@/components/SocialLinksBar";
 
 export default function Index() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
