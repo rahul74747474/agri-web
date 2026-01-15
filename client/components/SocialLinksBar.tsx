@@ -1,4 +1,10 @@
-import { Youtube, Instagram, MessageCircle, MessageCircleMore, X } from "lucide-react";
+import {
+  Youtube,
+  Instagram,
+  MessageCircle,
+  MessageCircleMore,
+  X,
+} from "lucide-react";
 
 export function SocialLinksBar() {
   const socialLinks = [

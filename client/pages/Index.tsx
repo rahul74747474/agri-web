@@ -673,7 +673,7 @@ export default function Index() {
         </div>
       </section>
 
-{/* Vision Section */}
+      {/* Vision Section */}
       <section
         id="vision"
         className="relative py-32 bg-[#1a4731] text-white overflow-hidden flex items-center justify-center text-center"
@@ -691,7 +691,8 @@ export default function Index() {
               <span className="text-amber-400">Digital Companion</span>.”
             </h2>
             <p className="text-xl text-green-100/80 font-light max-w-2xl mx-auto">
-              One that understands their language, their challenges, and delivers the right guidance at the right time.
+              One that understands their language, their challenges, and
+              delivers the right guidance at the right time.
             </p>
             <button className="mt-8 bg-white text-green-900 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.3)]">
               Join Us
@@ -745,15 +746,16 @@ export default function Index() {
 
             <div className="text-right">
               <p className="text-sm">
-                Built for{' '}
-                <span className="text-amber-400 font-bold">Indian Farmers</span>{' '}
+                Built for{" "}
+                <span className="text-amber-400 font-bold">Indian Farmers</span>{" "}
                 🇮🇳
               </p>
               <p className="text-xs mt-1 text-green-100/30">
                 © 2024 Kisaan Sathi. All rights reserved.
               </p>
               <p className="text-xs mt-1 text-green-100/30">
-                Under:Mahakumbhrix Entrepreneurship & Tech Eagles Innovation Group
+                Under:Mahakumbhrix Entrepreneurship & Tech Eagles Innovation
+                Group
               </p>
             </div>
           </div>
